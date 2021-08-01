@@ -1,0 +1,259 @@
+{
+	"info": {
+		"_postman_id": "cd670b65-4ec0-4c1d-810f-42bd6705f083",
+		"name": "Task Management API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "createTasks",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFubW9sYmhhc2luNCIsImlhdCI6MTYyNzgxNjY1MiwiZXhwIjoxNjI3ODIwMjUyfQ.aLnelSduhMqKLUuVR1WXbFodgAnAfmbIeAEP7ioJ89w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "title",
+							"value": "Task Title New",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Cook Paneer",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3001/tasks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllTasks",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFubW9sYmhhc2luIiwiaWF0IjoxNjI3ODE0NDU3LCJleHAiOjE2Mjc4MTgwNTd9.a647cA3lgRpFSW8aNkMaY0HmGjNt3KBz03QG8iaaJxI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/tasks?search=clean",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"tasks"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "clean"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getTaskById",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFubW9sYmhhc2luIiwiaWF0IjoxNjI3ODE0NDU3LCJleHAiOjE2Mjc4MTgwNTd9.a647cA3lgRpFSW8aNkMaY0HmGjNt3KBz03QG8iaaJxI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/tasks/82a3c544-1d90-45ef-b26b-f48c7e02a867",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"tasks",
+						"82a3c544-1d90-45ef-b26b-f48c7e02a867"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteTask",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFubW9sYmhhc2luMiIsImlhdCI6MTYyNzc5NzYyMCwiZXhwIjoxNjI3ODAxMjIwfQ.eazcw9PYTPrwvQnNgZiUBod4g2dKW_I48a2CGMufsvs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/tasks/c333fc3b-21ca-4d52-b944-c532341f5de6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"tasks",
+						"c333fc3b-21ca-4d52-b944-c532341f5de6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateTaskStatus",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFubW9sYmhhc2luMiIsImlhdCI6MTYyNzc5NzYyMCwiZXhwIjoxNjI3ODAxMjIwfQ.eazcw9PYTPrwvQnNgZiUBod4g2dKW_I48a2CGMufsvs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "status",
+							"value": "IN_PROGRESS",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3001/tasks/406b5e55-e2e8-4ef2-88e6-97691f70d74f/status",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"tasks",
+						"406b5e55-e2e8-4ef2-88e6-97691f70d74f",
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "anmol",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "anmol",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3001/auth/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "anmol7898",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "anmol6!A",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3001/auth/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"auth",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
